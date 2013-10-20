@@ -1,4 +1,50 @@
-﻿@inherits Umbraco.Web.Mvc.UmbracoTemplatePage
-@{
-    Layout = null;
-}
+﻿<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="utf-8">
+    <title>@ViewBag.Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <!-- Le styles -->
+    <link href="~/Content/bootstrap/bootstrap.min.css" rel="stylesheet">
+    <link href="~/Content/bootstrap/bootstrap-theme.min.css" rel="stylesheet">
+
+    <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <!-- Le fav and touch icons -->
+    <link rel="shortcut icon" href="~/Content/icons/favicon.ico">
+</head>
+
+<body>
+
+    <div class="row">
+        <div class="col-lg-8">Full Width</div>
+        <div class="col-lg-4">Full Width</div>
+    </div>
+
+    <div class="row">
+        <div class="container">
+
+            @RenderBody()
+
+        </div>
+
+    </div>
+
+    <div class="row"></div>
+    <!-- /container -->
+
+    <!-- Le javascript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="~/scripts/jquery-1.9.1.min.js"></script>
+    <script src="~/Scripts/bootstrap.min.js"></script>
+    @RenderSection("scripts", required: false)
+
+</body>
+</html>
