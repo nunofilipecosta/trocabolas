@@ -150,3 +150,6 @@ $RECYCLE.BIN/
 # Mac crap
 .DS_Store
 /packages
+/src/TrocaBolas.Web/App_Data/TEMP
+/src/TrocaBolas.Web/App_Data/Logs
+/src/TrocaBolas.Web/App_Data/umbraco.config
