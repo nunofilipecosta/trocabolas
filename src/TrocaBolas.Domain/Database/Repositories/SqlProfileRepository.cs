@@ -1,0 +1,70 @@
+﻿namespace TrocaBolas.Domain.Database.Repositories
+{
+    using System;
+    using System.Data;
+    using System.Linq;
+    using System.Web.Security;
+    using TrocaBolas.Domain.Entities;
+    using TrocaBolas.Domain.Services;
+
+    public class SqlUserRepository : IUserRepository
+    {
+        private readonly IDbContext _context;
+        
+
+        public SqlUserRepository()
+        {
+            _context = new TrocaBolasContext();
+        }
+
+        public TrocaBolasUser GetById(Guid userId)
+        {
+            var membershipUser = Membership.GetUser(userId);
+            if (membershipUser == null || membershipUser.ProviderUserKey == null)
+            {
+                throw new InvalidExpressionException(string.Format("No user found with Id : {0}", userId));
+            }
+
+            var trocaBolasUserProfile = _context.Profiles.SingleOrDefault(u => u.UserId == userId);
+
+            return new TrocaBolasUser(Guid.Parse(membershipUser.ProviderUserKey.ToString()), membershipUser.UserName, membershipUser.Email, trocaBolasUserProfile);
+        }
+
+        public TrocaBolasUser Add(TrocaBolasUser currentUser, string password)
+        {
+            var validateUser = Membership.ValidateUser("", "");
+
+            var membershipUser = Membership.CreateUser(currentUser.Username, password, currentUser.Email);
+
+            
+
+            if (membershipUser.ProviderUserKey == null)
+            {
+                throw new InvalidOperationException();
+            }
+
+            var currentProfile = new TrocaBolasUserProfile();
+            try
+            {
+                currentProfile.Address = currentUser.Address;
+                currentProfile.Name = currentUser.Name;
+                currentProfile.Phone = currentUser.Phone;
+                currentProfile.Town = currentUser.Town;
+                currentProfile.UserId = Guid.Parse(membershipUser.ProviderUserKey.ToString());
+                currentProfile.ZipCode = currentUser.ZipCode;
+
+                _context.Profiles.Add(currentProfile);
+                _context.Save();
+            }
+            catch (Exception exception)
+            {
+                Membership.DeleteUser(membershipUser.UserName, true);
+                Console.WriteLine(exception.Message);
+                throw;
+            }
+
+
+            return new TrocaBolasUser(currentProfile.UserId, membershipUser.UserName, membershipUser.Email, currentProfile);
+        }
+    }
+}
