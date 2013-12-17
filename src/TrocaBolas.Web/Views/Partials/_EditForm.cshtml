@@ -1,0 +1,122 @@
+﻿@model TrocaBolas.Web.Models.EditViewModel
+
+@{
+    Html.EnableClientValidation();
+    Html.EnableUnobtrusiveJavaScript();
+}
+
+<h2>Dados pessoais</h2>
+<div class="row">
+    <div class="col-md-8">
+
+        @if (TempData["RegisterWithSuccess"] != null)
+        {
+            <p>Registo efectuado com sucesso! Obrigado</p>
+        }
+        else
+        {
+            <section id="loginForm">
+                @using (Html.BeginUmbracoForm("PostRegisterForm", "RegisterSurface", new { @class = "form-horizontal", role = "form" }))
+                {
+                    @Html.AntiForgeryToken()
+                    <h4>Use a local account to log in.</h4>
+                    <hr />
+                    @Html.ValidationSummary(true)
+                    <div class="form-group">
+                        @Html.LabelFor(m => m.Name, new { @class = "col-md-2 control-label" })
+                        <div class="col-md-10">
+                            @Html.TextBoxFor(m => m.Name, new { @class = "form-control" })
+                            @Html.ValidationMessageFor(m => m.Name)
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        @Html.LabelFor(m => m.Email, new { @class = "col-md-2 control-label" })
+                        <div class="col-md-10">
+                            @Html.TextBoxFor(m => m.Email, new { @class = "form-control" })
+                            @Html.ValidationMessageFor(m => m.Email)
+                            @Html.TextBoxFor(m => m.ConfirmEmail, new { @class = "form-control" })
+                            @Html.ValidationMessageFor(m => m.ConfirmEmail)
+                        </div>
+
+                    </div>
+                    <div class="form-group">
+                        @Html.LabelFor(m => m.Password, new { @class = "col-md-2 control-label" })
+                        <div class="col-md-10">
+                            @Html.PasswordFor(m => m.Password, new { @class = "form-control" })
+                            @Html.ValidationMessageFor(m => m.Password)
+                            @Html.PasswordFor(m => m.ConfirmPassword, new { @class = "form-control" })
+                            @Html.ValidationMessageFor(m => m.ConfirmPassword)
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        @Html.LabelFor(m => m.Address, new { @class = "col-md-2 control-label" })
+                        <div class="col-md-10">
+                            @Html.TextBoxFor(m => m.Address, new { @class = "form-control" })
+                            @Html.ValidationMessageFor(m => m.Address)
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        @Html.LabelFor(m => m.ZipCodeLong, new { @class = "col-md-2 control-label" })
+                        <div class="col-md-10">
+                            @Html.TextBoxFor(m => m.ZipCodeLong, new { @class = "form-control " })
+                            @Html.ValidationMessageFor(m => m.ZipCodeLong)
+                            @Html.TextBoxFor(m => m.ZipCodeShort, new { @class = "form-control" })
+                            @Html.ValidationMessageFor(m => m.ZipCodeShort)
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        @Html.LabelFor(m => m.Town, new { @class = "col-md-2 control-label" })
+                        <div class="col-md-10">
+                            @Html.TextBoxFor(m => m.Town, new { @class = "form-control" })
+                            @Html.ValidationMessageFor(m => m.Town)
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        @Html.LabelFor(m => m.Phone, new { @class = "col-md-2 control-label" })
+                        <div class="col-md-10">
+                            @Html.TextBoxFor(m => m.Phone, new { @class = "form-control" })
+                            @Html.ValidationMessageFor(m => m.Phone)
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        @Html.LabelFor(m => m.FiscalIdentificationNumber, new { @class = "col-md-2 control-label" })
+                        <div class="col-md-10">
+                            @Html.TextBoxFor(m => m.FiscalIdentificationNumber, new { @class = "form-control" })
+                            @Html.ValidationMessageFor(m => m.FiscalIdentificationNumber)
+                        </div>
+                    </div>
+                    @*<div class="form-group">
+                            <div class="col-md-offset-2 col-md-10">
+                                <div class="checkbox">
+                                    @Html.CheckBoxFor(m => m.RememberMe)
+                                    @Html.LabelFor(m => m.RememberMe)
+                                </div>
+                            </div>
+                        </div>*@
+                    <div class="form-group">
+                        <div class="col-md-offset-2 col-md-10">
+                            <button class="btn btn-primary" type="submit">Registar</button>
+                        </div>
+                    </div>
+                }
+            </section>
+        }
+
+    </div>
+    <div class="col-md-4">
+        <aside id="socialLoginForm">
+            <p>
+                <a href="/login/">clique aqui</a> se ja tem uma conta
+            </p>
+            <p>
+                <a href="/login/">clique aqui</a> se ja tem uma conta
+            </p>
+            <p>
+                <a href="/login/">clique aqui</a> se ja tem uma conta
+            </p>
+            <p>
+                <a href="/login/">clique aqui</a> se ja tem uma conta
+            </p>
+        </aside>
+    </div>
+</div>

@@ -16,10 +16,13 @@ namespace TrocaBolas.Domain.Database
 
         public DbSet<TrocaBolasUserProfile> Profiles { get; set; }
 
+        public DbSet<TrocaBolasProduct> Products { get; set; }
+
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             // add mappings here
             modelBuilder.Configurations.Add(new TrocaBolasUserProfileMapping());
+            //modelBuilder.Configurations.Add(new TrocaBolasProductMapping());
         }
 
         public void Save()

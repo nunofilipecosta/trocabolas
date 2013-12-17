@@ -1,10 +1,9 @@
-using System;
-
 namespace TrocaBolas.Web.Models
 {
+    using System;
     using System.ComponentModel.DataAnnotations;
 
-    public class RegisterViewModel
+    public class EditViewModel
     {
         public Guid UserId { get; set; }
 
@@ -33,15 +32,12 @@ namespace TrocaBolas.Web.Models
         public string ZipCodeShort { get; set; }
 
         [Required]
-        [Display(Name = "Localidade")]
         public string Town { get; set; }
 
         [Required]
-        [Display(Name = "N.I.F")]
         public string FiscalIdentificationNumber { get; set; }
 
         [Required]
-        [Display(Name = "Telemóvel")]
         public string Phone { get; set; }
     }
 }

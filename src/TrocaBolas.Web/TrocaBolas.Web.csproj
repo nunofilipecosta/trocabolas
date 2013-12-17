@@ -66,11 +66,9 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\packages\xmlrpcnet.2.5.0\lib\net20\CookComputing.XmlRpcV2.dll</HintPath>
     </Reference>
-    <Reference Include="EntityFramework">
-      <HintPath>..\..\packages\EntityFramework.6.0.1\lib\net45\EntityFramework.dll</HintPath>
-    </Reference>
-    <Reference Include="EntityFramework.SqlServer">
-      <HintPath>..\..\packages\EntityFramework.6.0.1\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    <Reference Include="EntityFramework, Version=5.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\packages\EntityFramework.5.0.0\lib\net45\EntityFramework.dll</HintPath>
     </Reference>
     <Reference Include="Examine, Version=0.1.52.2941, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
@@ -145,6 +143,7 @@
       <HintPath>..\..\packages\UmbracoCms.Core.6.1.6\lib\SQLCE4Umbraco.dll</HintPath>
     </Reference>
     <Reference Include="System.Configuration" />
+    <Reference Include="System.Data.Entity" />
     <Reference Include="System.Data.SqlServerCe, Version=4.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
       <Private>True</Private>
       <HintPath>..\..\packages\UmbracoCms.Core.6.1.6\lib\System.Data.SqlServerCe.dll</HintPath>
@@ -180,6 +179,9 @@
     <Reference Include="System.Web.Mvc, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <Private>True</Private>
       <HintPath>..\..\packages\Microsoft.AspNet.Mvc.4.0.30506.0\lib\net40\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Providers">
+      <HintPath>..\..\packages\Microsoft.AspNet.Providers.Core.1.2\lib\net40\System.Web.Providers.dll</HintPath>
     </Reference>
     <Reference Include="System.Web.Razor, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <Private>True</Private>
@@ -259,6 +261,7 @@
     <Compile Include="Builders\ViewModelBuiders\RegisterViewModelBuilder.cs" />
     <Compile Include="Controllers\MainMenuSurfaceController.cs" />
     <Compile Include="Controllers\RegisterSurfaceController.cs" />
+    <Compile Include="Models\EditViewModel.cs" />
     <Compile Include="Models\LoginViewModel.cs" />
     <Compile Include="Models\MainMenuViewModel.cs" />
     <Compile Include="Models\RegisterViewModel.cs" />
@@ -286,7 +289,6 @@
     <Content Include="css\bootstrap-theme.min.css" />
     <Content Include="css\bootstrap.css" />
     <Content Include="css\bootstrap.min.css" />
-    <Content Include="css\dummy.txt" />
     <Content Include="css\root.css" />
     <Content Include="default.aspx" />
     <Content Include="Global.asax" />
@@ -307,8 +309,13 @@
     <Content Include="css\fonts\glyphicons-halflings-regular.ttf" />
     <Content Include="css\fonts\glyphicons-halflings-regular.svg" />
     <Content Include="css\fonts\glyphicons-halflings-regular.eot" />
-    <Content Include="scripts\dummy.txt" />
     <Content Include="scripts\html5shiv.js" />
+    <Content Include="scripts\knockout-3.0.0.debug.js" />
+    <Content Include="scripts\knockout-3.0.0.js" />
+    <Content Include="scripts\knockout.mapping-latest.debug.js" />
+    <Content Include="scripts\knockout.mapping-latest.js" />
+    <Content Include="scripts\knockout.validation.debug.js" />
+    <Content Include="scripts\knockout.validation.js" />
     <Content Include="usercontrols\dummy.txt" />
     <Content Include="Views\shared\_html5shiv.cshtml" />
     <Content Include="macroScripts\Web.config" />
@@ -316,7 +323,9 @@
     <Content Include="bin\amd64\Microsoft.VC90.CRT\Microsoft.VC90.CRT.manifest" />
     <Content Include="config\xsltExtensions.config" />
     <Content Include="config\UrlRewriting.config" />
-    <Content Include="config\umbracoSettings.config" />
+    <Content Include="config\umbracoSettings.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="config\trees.config" />
     <Content Include="config\tinyMceConfig.config" />
     <Content Include="config\Skinning.config" />
@@ -347,6 +356,8 @@
     <Content Include="scripts\respond.js" />
     <Content Include="scripts\respond.min.js" />
     <Content Include="web.config" />
+    <Content Include="Views\ProfilePage.cshtml" />
+    <Content Include="Views\Partials\_EditForm.cshtml" />
     <None Include="web.Debug.config">
       <DependentUpon>web.config</DependentUpon>
     </None>

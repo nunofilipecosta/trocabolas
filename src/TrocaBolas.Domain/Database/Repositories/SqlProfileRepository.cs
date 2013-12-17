@@ -30,18 +30,18 @@
             return new TrocaBolasUser(Guid.Parse(membershipUser.ProviderUserKey.ToString()), membershipUser.UserName, membershipUser.Email, trocaBolasUserProfile);
         }
 
+        ///<exception cref="T:System.InvalidOperationException">The user was not created.</exception>
         public TrocaBolasUser Add(TrocaBolasUser currentUser, string password)
         {
-            var validateUser = Membership.ValidateUser("", "");
-
             var membershipUser = Membership.CreateUser(currentUser.Username, password, currentUser.Email);
-
-            
-
+        
             if (membershipUser.ProviderUserKey == null)
             {
                 throw new InvalidOperationException();
             }
+
+            // add user to role
+            Roles.AddUserToRole(membershipUser.UserName, "RegisteredUsers");
 
             var currentProfile = new TrocaBolasUserProfile();
             try

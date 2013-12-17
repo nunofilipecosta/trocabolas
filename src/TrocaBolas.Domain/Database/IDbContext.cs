@@ -4,15 +4,17 @@
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
 
-    using TrocaBolas.Domain.Entities;
+    using Entities;
 
     public interface IDbContext : IDisposable
     {
-        System.Data.Entity.Database Database { get; }
+        Database Database { get; }
 
         DbContextConfiguration Configuration { get; }
 
         DbSet<TrocaBolasUserProfile> Profiles { get; set; }
+
+        DbSet<TrocaBolasProduct> Products { get; set; }
 
         void Save();
     }

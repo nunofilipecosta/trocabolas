@@ -4,8 +4,6 @@ namespace TrocaBolas.Web.Builders
 
     public interface IViewModelBuilder<TIn, TOut>
     {
-        TOut Build(TIn domain);
-
         TOut Build(Guid id);
 
         TOut Rebuild(TOut viewModel);

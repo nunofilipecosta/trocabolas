@@ -27,7 +27,6 @@ namespace TrocaBolas.Web.Controllers
             _accountService = _accountService;
             _domainBuilder = _domainBuilder;
             _viewModelBuilder = _viewModelBuilder;
-
         }
 
         public RegisterSurfaceController()
@@ -45,7 +44,7 @@ namespace TrocaBolas.Web.Controllers
         }
 
         [HttpPost]
-        public PartialViewResult PostRegisterForm(RegisterViewModel viewModel)
+        public ActionResult PostRegisterForm(RegisterViewModel viewModel)
         {
             if (ModelState.IsValid)
             {
@@ -57,17 +56,15 @@ namespace TrocaBolas.Web.Controllers
 
                     TempData["RegisterWithSuccess"] = true;
 
-                    //return RedirectToCurrentUmbracoPage();
-                    return PartialView("_RegisterForm", viewModel);
+                    return Redirect("~/");
                 }
                 catch (Exception exception)
                 {
-                    Console.WriteLine(exception);
-                    // TODO : add exception to ModelState
+                    ModelState.AddModelError(string.Empty, exception);
                 }
             }
 
-            return PartialView("_RegisterForm", viewModel);
+            return CurrentUmbracoPage();
         }
 
         public PartialViewResult Login()
@@ -88,10 +85,10 @@ namespace TrocaBolas.Web.Controllers
                     if (isValid)
                     {
                         FormsAuthentication.SetAuthCookie(viewModel.UserName, viewModel.Remember);
-                        return RedirectToCurrentUmbracoPage();
+                        return Redirect("~/");
                     }
 
-                    ModelState.AddModelError("", "Username / Password inválidos");
+                    ModelState.AddModelError(string.Empty, "Username / Password inválidos");
                 }
                 catch (Exception exception)
                 {
@@ -103,11 +100,37 @@ namespace TrocaBolas.Web.Controllers
         }
 
         [HttpPost]
-        public PartialViewResult PostLogoutForm()
+        public RedirectToUmbracoPageResult PostLogoutForm()
         {
-            return new PartialViewResult();
+            FormsAuthentication.SignOut();
+            return RedirectToCurrentUmbracoPage();
         }
 
+        [HttpGet]
+        public ActionResult Edit()
+        {
+            var viewModel = new EditViewModel();
 
+            return PartialView("_EditForm", viewModel);
+        }
+
+        [HttpPost]
+        public ActionResult EditForm(EditViewModel viewModel)
+        {
+            if (ModelState.IsValid)
+            {
+                try
+                {
+                    TempData["RegisterWithSuccess"] = true;
+                    return CurrentUmbracoPage();
+                }
+                catch (Exception exception)
+                {
+                    ModelState.AddModelError("Business", exception);
+                }
+            }
+
+            return CurrentUmbracoPage();
+        }
     }
 }

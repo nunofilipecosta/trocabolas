@@ -9,6 +9,7 @@
         public TrocaBolasProductMapping()
         {
             this.HasKey(p => p.ProductId);
+            ToTable("Products");
         }
     }
 }
