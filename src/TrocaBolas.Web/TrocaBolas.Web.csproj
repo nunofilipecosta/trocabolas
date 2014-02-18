@@ -316,8 +316,8 @@
     <Content Include="scripts\knockout.mapping-latest.js" />
     <Content Include="scripts\knockout.validation.debug.js" />
     <Content Include="scripts\knockout.validation.js" />
+    <None Include="scripts\_references.js" />
     <Content Include="usercontrols\dummy.txt" />
-    <Content Include="Views\shared\_html5shiv.cshtml" />
     <Content Include="macroScripts\Web.config" />
     <Content Include="bin\x86\Microsoft.VC90.CRT\Microsoft.VC90.CRT.manifest" />
     <Content Include="bin\amd64\Microsoft.VC90.CRT\Microsoft.VC90.CRT.manifest" />
@@ -373,6 +373,7 @@
   <ItemGroup>
     <Folder Include="App_Data\packages\created\" />
     <Folder Include="Views\MacroPartials\" />
+    <Folder Include="Views\shared\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config">
