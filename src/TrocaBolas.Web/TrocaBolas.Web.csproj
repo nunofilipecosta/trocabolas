@@ -122,9 +122,9 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\packages\MySql.Data.6.6.5\lib\net40\MySql.Data.dll</HintPath>
     </Reference>
-    <Reference Include="Newtonsoft.Json, Version=4.5.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+    <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\packages\Newtonsoft.Json.4.5.11\lib\net40\Newtonsoft.Json.dll</HintPath>
+      <HintPath>..\..\packages\Newtonsoft.Json.6.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
     </Reference>
     <Reference Include="Our.Umbraco.uGoLive, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
@@ -285,12 +285,14 @@
     <Content Include="bin\x86\sqlceme40.dll" />
     <Content Include="bin\x86\sqlceqp40.dll" />
     <Content Include="bin\x86\sqlcese40.dll" />
-    <Content Include="css\bootstrap-theme.css" />
-    <Content Include="css\bootstrap-theme.min.css" />
-    <Content Include="css\bootstrap.css" />
-    <Content Include="css\bootstrap.min.css" />
-    <Content Include="css\root.css" />
+    <Content Include="Content\bootstrap-theme.css" />
+    <Content Include="Content\bootstrap-theme.min.css" />
+    <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\bootstrap.min.css">
+      <DependentUpon>bootstrap.css</DependentUpon>
+    </Content>
     <Content Include="default.aspx" />
+    <Content Include="Content\fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Images\logo.PNG" />
     <Content Include="Images\Inspiration\bigbase.html" />
@@ -305,17 +307,27 @@
     <Content Include="scripts\bootstrap.js" />
     <Content Include="scripts\bootstrap.min.js" />
     <Content Include="scripts\Core\main.js" />
-    <Content Include="css\fonts\glyphicons-halflings-regular.woff" />
-    <Content Include="css\fonts\glyphicons-halflings-regular.ttf" />
-    <Content Include="css\fonts\glyphicons-halflings-regular.svg" />
-    <Content Include="css\fonts\glyphicons-halflings-regular.eot" />
     <Content Include="scripts\html5shiv.js" />
+    <Content Include="Content\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="Content\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="Content\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Content\bootstrap-theme.css.map" />
+    <Content Include="Content\bootstrap.css.map" />
+    <None Include="scripts\jquery-2.1.0.intellisense.js" />
+    <Content Include="scripts\jquery-2.1.0.js" />
+    <Content Include="scripts\jquery-2.1.0.min.js" />
+    <None Include="scripts\jquery.validate-vsdoc.js" />
+    <Content Include="scripts\jquery.validate.js" />
+    <Content Include="scripts\jquery.validate.min.js" />
+    <Content Include="scripts\jquery.validate.unobtrusive.js" />
+    <Content Include="scripts\jquery.validate.unobtrusive.min.js" />
     <Content Include="scripts\knockout-3.0.0.debug.js" />
     <Content Include="scripts\knockout-3.0.0.js" />
     <Content Include="scripts\knockout.mapping-latest.debug.js" />
     <Content Include="scripts\knockout.mapping-latest.js" />
     <Content Include="scripts\knockout.validation.debug.js" />
     <Content Include="scripts\knockout.validation.js" />
+    <Content Include="scripts\jquery-2.1.0.min.map" />
     <None Include="scripts\_references.js" />
     <Content Include="usercontrols\dummy.txt" />
     <Content Include="macroScripts\Web.config" />
@@ -343,21 +355,12 @@
     <Content Include="config\BaseRestExtensions.config" />
     <Content Include="config\applications.config" />
     <Content Include="config\404handlers.config" />
-    <None Include="scripts\jquery-2.0.3.intellisense.js" />
-    <Content Include="scripts\jquery-2.0.3.js" />
-    <Content Include="scripts\jquery-2.0.3.min.js" />
-    <Content Include="scripts\jquery.unobtrusive-ajax.js" />
-    <Content Include="scripts\jquery.unobtrusive-ajax.min.js" />
-    <None Include="scripts\jquery.validate-vsdoc.js" />
-    <Content Include="scripts\jquery.validate.js" />
-    <Content Include="scripts\jquery.validate.min.js" />
-    <Content Include="scripts\jquery.validate.unobtrusive.js" />
-    <Content Include="scripts\jquery.validate.unobtrusive.min.js" />
     <Content Include="scripts\respond.js" />
     <Content Include="scripts\respond.min.js" />
     <Content Include="web.config" />
     <Content Include="Views\ProfilePage.cshtml" />
     <Content Include="Views\Partials\_EditForm.cshtml" />
+    <Content Include="Views\Partials\_Navbar.cshtml" />
     <None Include="web.Debug.config">
       <DependentUpon>web.config</DependentUpon>
     </None>
@@ -388,7 +391,6 @@
     <Content Include="Views\Partials\_MainMenu.cshtml" />
     <Content Include="Views\RegisterPage.cshtml" />
     <Content Include="Views\Partials\_RegisterForm.cshtml" />
-    <Content Include="scripts\jquery-2.0.3.min.map" />
     <Content Include="Views\Partials\_Login.cshtml" />
     <Content Include="Views\LoginPage.cshtml" />
     <Content Include="Views\Partials\_LoginForm.cshtml" />
