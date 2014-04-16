@@ -1,0 +1,73 @@
+﻿@inherits Umbraco.Web.Mvc.UmbracoTemplatePage
+@{
+    Layout = "BaseRootTemplate.cshtml";
+}
+
+
+<h2>Area Pessoal</h2>
+
+
+<div class="row">
+
+    <!-- Nav tabs -->
+    <ul class="nav nav-tabs">
+        <li class="active"><a href="#home" data-toggle="tab">Home</a></li>
+        <li><a href="#profile" data-toggle="tab">Profile</a></li>
+        <li><a href="#messages" data-toggle="tab">Messages</a></li>
+        <li><a href="#settings" data-toggle="tab">Settings</a></li>
+    </ul>
+
+    <!-- Tab panes -->
+    <div class="tab-content">
+        <div class="tab-pane active" id="home">
+            Ultimos produtos inseridos
+            <div>
+                <table class="table table-responsive table-striped table-condensed table-bordered table-hover">
+                    <tr>
+                        <th>
+                            Nome
+                        </th>
+                        <th>Preço</th>
+                        <th>Estado</th>
+                    </tr>
+                    <tr>
+                        <td>Botas Adidas</td>
+                        <td>15 €</td>
+                        <td>Dispinivel</td>
+                    </tr>
+                    <tr>
+                        <td>Botas Adidas</td>
+                        <td>15 €</td>
+                        <td>Reservado   </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+        <div class="tab-pane" id="profile">
+            @Html.Action("Edit", "RegisterSurface")
+        </div>
+        <div class="tab-pane" id="messages">
+
+            Notificações
+            <ul>
+                <li>
+                    <p class="alert alert-danger alert-dismissable">Alert Danger</p>
+                </li>
+                <li>
+                    <p class="alert alert-info"> Alert Info</p>
+                </li>
+                <li>
+                    <p class="alert alert-success">Alert Success</p>
+                </li>
+                <li>
+                    <p class="alert alert-warning">Alert warning</p>
+                </li>
+            </ul>
+
+        </div>
+        <div class="tab-pane" id="settings">
+            <h3>some settings</h3>
+        </div>
+    </div>
+
+</div>
