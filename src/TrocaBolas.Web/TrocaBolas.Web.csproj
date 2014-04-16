@@ -2874,6 +2874,12 @@
     <Folder Include="App_Data\packages\created\" />
     <Folder Include="App_Data\preview\" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\TrocaBolas.Domain\TrocaBolas.Domain.csproj">
+      <Project>{965afe1b-b66a-46ec-9c41-ffdab899057d}</Project>
+      <Name>TrocaBolas.Domain</Name>
+    </ProjectReference>
+  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
