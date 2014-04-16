@@ -1,8 +1,6 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2013
-VisualStudioVersion = 12.0.30324.0
-MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TrocaBolas.DependencyInjection", "src\TrocaBolas.DependencyInjection\TrocaBolas.DependencyInjection.csproj", "{061B14D8-DB2E-42FD-9FD0-8ADF88CEFA66}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TrocaBolas.Infrastructure", "src\TrocaBolas.Infrastructure\TrocaBolas.Infrastructure.csproj", "{969885E1-1A24-44E1-914F-78C17DF9C46C}"
