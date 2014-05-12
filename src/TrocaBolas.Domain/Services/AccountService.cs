@@ -24,10 +24,23 @@ namespace TrocaBolas.Domain.Services
 
             return trocaBolasUser;
         }
-
+        
         public TrocaBolasUser GetById(Guid userId)
         {
-            throw new System.NotImplementedException();
+            try
+            {
+                return GetException();
+            }
+            catch (NotImplementedException notImplementedException)
+            {
+                return new TrocaBolasUser();
+            }
+        }
+
+        /// <exception cref="NotImplementedException">Thrown every time </exception>
+        private TrocaBolasUser GetException()
+        {
+            throw new NotImplementedException();
         }
 
         public bool Validate(string userName, string password)

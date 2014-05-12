@@ -15,6 +15,7 @@ namespace TrocaBolas.Web.Builders.ViewModelBuiders
             _accountService = accountService;
         }
 
+        /// <exception cref="NotImplementedException">Thrown when something goes really bad</exception>
         public RegisterViewModel Build(Guid userId)
         {
             if (userId == Guid.Empty)
@@ -27,6 +28,7 @@ namespace TrocaBolas.Web.Builders.ViewModelBuiders
             throw new NotImplementedException();
         }
 
+        /// <exception cref="NotImplementedException">Thrown when </exception>
         public RegisterViewModel Rebuild(RegisterViewModel viewModel)
         {
             throw new NotImplementedException();
