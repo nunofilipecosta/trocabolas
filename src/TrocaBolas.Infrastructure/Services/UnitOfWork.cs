@@ -1,9 +1,8 @@
 ﻿
-namespace TrocaBolas.Domain.Services
+namespace TrocaBolas.Infrastructure.Services
 {
     using System;
-
-    using TrocaBolas.Domain.Database;
+    using Database;
 
     public class UnitOfWork : IUnitOfWork , IDisposable
     {

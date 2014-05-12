@@ -1,11 +1,11 @@
-﻿namespace TrocaBolas.Domain.Database.Repositories
+﻿namespace TrocaBolas.Infrastructure.Database.Repositories
 {
     using System;
     using System.Data;
     using System.Linq;
     using System.Web.Security;
-    using TrocaBolas.Domain.Entities;
-    using TrocaBolas.Domain.Services;
+    using Domain.Entities;
+    using Services;
 
     public class SqlUserRepository : IUserRepository
     {

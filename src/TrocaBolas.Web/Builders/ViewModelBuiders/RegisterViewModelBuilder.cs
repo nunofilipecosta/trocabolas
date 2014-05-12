@@ -1,10 +1,10 @@
 using TrocaBolas.Domain.Entities;
-using TrocaBolas.Domain.Services;
 using TrocaBolas.Web.Models;
 
 namespace TrocaBolas.Web.Builders.ViewModelBuiders
 {
     using System;
+    using Infrastructure.Services;
 
     public class RegisterViewModelBuilder : IViewModelBuilder<TrocaBolasUser, RegisterViewModel>
     {

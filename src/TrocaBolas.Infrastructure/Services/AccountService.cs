@@ -1,9 +1,10 @@
-﻿using System;
-using System.Web.Security;
-using TrocaBolas.Domain.Database.Repositories;
-using TrocaBolas.Domain.Entities;
-namespace TrocaBolas.Domain.Services
+﻿namespace TrocaBolas.Infrastructure.Services
 {
+    using System;
+    using System.Web.Security;
+    using Database.Repositories;
+    using Domain.Entities;
+
     public class AccountService : IAccountService
     {
         private readonly IUserRepository _userRepository;

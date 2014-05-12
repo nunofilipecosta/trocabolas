@@ -1,13 +1,13 @@
-﻿namespace TrocaBolas.Domain.Database
+﻿namespace TrocaBolas.Infrastructure.Database
 {
     using System;
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
-    using Entities;
+    using Domain.Entities;
 
     public interface IDbContext : IDisposable
     {
-        Database Database { get; }
+        Database Db { get; }
 
         DbContextConfiguration Configuration { get; }
 

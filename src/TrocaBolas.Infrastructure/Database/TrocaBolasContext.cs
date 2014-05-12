@@ -1,11 +1,9 @@
 ﻿
-namespace TrocaBolas.Domain.Database
+namespace TrocaBolas.Infrastructure.Database
 {
-    using System;
     using System.Data.Entity;
-
-    using TrocaBolas.Domain.Database.Mappings;
-    using TrocaBolas.Domain.Entities;
+    using Domain.Entities;
+    using Mappings;
 
     public class TrocaBolasContext : DbContext, IDbContext
     {
@@ -13,6 +11,8 @@ namespace TrocaBolas.Domain.Database
             : base("umbracoDbDSN")
         {
         }
+
+        public Database Db { get; private set; }
 
         public DbSet<TrocaBolasUserProfile> Profiles { get; set; }
 

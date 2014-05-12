@@ -300,6 +300,9 @@
     <Compile Include="Builders\ViewModelBuiders\RegisterViewModelBuilder.cs" />
     <Compile Include="Controllers\MainMenuSurfaceController.cs" />
     <Compile Include="Controllers\RegisterSurfaceController.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
     <Compile Include="Models\EditViewModel.cs" />
     <Compile Include="Models\LoginViewModel.cs" />
     <Compile Include="Models\MainMenuViewModel.cs" />
@@ -309,11 +312,20 @@
   <ItemGroup>
     <Folder Include="App_Data\packages\created\" />
     <Folder Include="App_Data\preview\" />
+    <Folder Include="App_Start\" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\TrocaBolas.DependencyInjection\TrocaBolas.DependencyInjection.csproj">
+      <Project>{061b14d8-db2e-42fd-9fd0-8adf88cefa66}</Project>
+      <Name>TrocaBolas.DependencyInjection</Name>
+    </ProjectReference>
     <ProjectReference Include="..\TrocaBolas.Domain\TrocaBolas.Domain.csproj">
       <Project>{965afe1b-b66a-46ec-9c41-ffdab899057d}</Project>
       <Name>TrocaBolas.Domain</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\TrocaBolas.Infrastructure\TrocaBolas.Infrastructure.csproj">
+      <Project>{969885e1-1a24-44e1-914f-78c17df9c46c}</Project>
+      <Name>TrocaBolas.Infrastructure</Name>
     </ProjectReference>
   </ItemGroup>
   <PropertyGroup>

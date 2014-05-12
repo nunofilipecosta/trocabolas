@@ -1,9 +1,8 @@
-﻿using System;
-
-using TrocaBolas.Domain.Entities;
-
-namespace TrocaBolas.Domain.Services
+﻿namespace TrocaBolas.Infrastructure.Services
 {
+    using System;
+    using Domain.Entities;
+
     public interface IAccountService
     {
         void Register(TrocaBolasUser currentUser);

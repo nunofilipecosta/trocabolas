@@ -2,7 +2,6 @@
 using System.Web.Mvc;
 using System.Web.Security;
 using TrocaBolas.Domain.Entities;
-using TrocaBolas.Domain.Services;
 using TrocaBolas.Web.Builders;
 using TrocaBolas.Web.Builders.DomainBuilders;
 using TrocaBolas.Web.Builders.ViewModelBuiders;
@@ -11,6 +10,8 @@ using Umbraco.Web.Mvc;
 
 namespace TrocaBolas.Web.Controllers
 {
+    using Infrastructure.Services;
+
     public class RegisterSurfaceController : SurfaceController
     {
         private readonly IAccountService _accountService;

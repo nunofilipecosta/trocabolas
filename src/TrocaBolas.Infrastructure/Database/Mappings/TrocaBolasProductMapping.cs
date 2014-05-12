@@ -1,8 +1,7 @@
-﻿namespace TrocaBolas.Domain.Database.Mappings
+﻿namespace TrocaBolas.Infrastructure.Database.Mappings
 {
     using System.Data.Entity.ModelConfiguration;
-
-    using TrocaBolas.Domain.Entities;
+    using Domain.Entities;
 
     public class TrocaBolasProductMapping : EntityTypeConfiguration<TrocaBolasProduct>
     {

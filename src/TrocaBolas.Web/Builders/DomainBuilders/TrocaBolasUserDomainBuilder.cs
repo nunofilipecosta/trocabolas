@@ -1,16 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-
-using TrocaBolas.Domain.Entities;
-using TrocaBolas.Domain.Services;
-using TrocaBolas.Web.Builders.ViewModelBuiders;
-using TrocaBolas.Web.Models;
+﻿
 
 namespace TrocaBolas.Web.Builders.DomainBuilders
 {
-    using System.Web.UI.WebControls;
+    using System;
+    using Infrastructure.Services;
+    using TrocaBolas.Domain.Entities;
+    using TrocaBolas.Web.Models;
 
     public class TrocaBolasUserDomainBuilder : IDomainBuilder<RegisterViewModel, TrocaBolasUser>
     {
@@ -18,7 +13,7 @@ namespace TrocaBolas.Web.Builders.DomainBuilders
 
         public TrocaBolasUserDomainBuilder(IAccountService accountService)
         {
-            _accountService = new AccountService();
+            _accountService = accountService;
         }
 
         public TrocaBolasUser Build(RegisterViewModel viewModel)
