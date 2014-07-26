@@ -13,7 +13,7 @@
 
         DbSet<TrocaBolasUserProfile> Profiles { get; set; }
 
-        DbSet<TrocaBolasProduct> Products { get; set; }
+        DbSet<Product> Products { get; set; }
 
         void Save();
     }

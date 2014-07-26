@@ -114,6 +114,17 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\packages\Newtonsoft.Json.6.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
     </Reference>
+    <Reference Include="Ninject, Version=3.2.0.0, Culture=neutral, PublicKeyToken=c7192dc5380945e7, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\packages\Ninject.3.2.2.0\lib\net45-full\Ninject.dll</HintPath>
+    </Reference>
+    <Reference Include="Ninject.Web.Common, Version=3.2.0.0, Culture=neutral, PublicKeyToken=c7192dc5380945e7, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\packages\Ninject.Web.Common.3.2.1.0\lib\net45-full\Ninject.Web.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Ninject.Web.Mvc">
+      <HintPath>..\..\packages\Ninject.MVC3.3.2.1.0\lib\net45-full\Ninject.Web.Mvc.dll</HintPath>
+    </Reference>
     <Reference Include="SQLCE4Umbraco">
       <HintPath>..\..\packages\UmbracoCms.Core.7.1.1\lib\SQLCE4Umbraco.dll</HintPath>
     </Reference>
@@ -209,6 +220,10 @@
     <Reference Include="UrlRewritingNet.UrlRewriter">
       <HintPath>..\..\packages\UmbracoCms.Core.7.1.1\lib\UrlRewritingNet.UrlRewriter.dll</HintPath>
     </Reference>
+    <Reference Include="WebActivatorEx, Version=2.0.0.0, Culture=neutral, PublicKeyToken=7b26dc2a43f6a0d4, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\packages\WebActivatorEx.2.0\lib\net40\WebActivatorEx.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Content Include="App_Code\dummy.txt" />
@@ -231,6 +246,8 @@
     <Content Include="fonts\glyphicons-halflings-regular.eot" />
     <Content Include="Content\bootstrap-theme.css.map" />
     <Content Include="Content\bootstrap.css.map" />
+    <None Include="Properties\PublishProfiles\trocabolas %282%29.pubxml" />
+    <None Include="Properties\PublishProfiles\trocabolas.pubxml" />
     <None Include="scripts\jquery-2.1.0.intellisense.js" />
     <Content Include="scripts\html5shiv.js" />
     <Content Include="scripts\jquery-2.1.0.js" />
@@ -294,6 +311,7 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="App_Start\NinjectWebCommon.cs" />
     <Compile Include="Builders\DomainBuilders\TrocaBolasUserDomainBuilder.cs" />
     <Compile Include="Builders\IDomainBuilder.cs" />
     <Compile Include="Builders\IViewModelBuilder.cs" />
@@ -312,7 +330,6 @@
   <ItemGroup>
     <Folder Include="App_Data\packages\created\" />
     <Folder Include="App_Data\preview\" />
-    <Folder Include="App_Start\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\TrocaBolas.DependencyInjection\TrocaBolas.DependencyInjection.csproj">

@@ -25,7 +25,16 @@ namespace TrocaBolas.Web.Builders.ViewModelBuiders
                 return emptyViewModel;
             }
 
-            throw new NotImplementedException();
+            var trocaBolasUser = _accountService.GetById(userId);
+
+            var registerViewModel = new RegisterViewModel();
+            registerViewModel.UserId = trocaBolasUser.UserId;
+            registerViewModel.Name = trocaBolasUser.Name;
+            registerViewModel.Address = trocaBolasUser.Address;
+            registerViewModel.FiscalIdentificationNumber = trocaBolasUser.FiscalIdentificationNumber;
+            registerViewModel.Phone = trocaBolasUser.Phone;
+
+            return registerViewModel;
         }
 
         /// <exception cref="NotImplementedException">Thrown when </exception>

@@ -2,11 +2,13 @@
 {
     using System.Collections.Generic;
 
-    public class TrocaBolasProduct
+    public class Product
     {
         public int ProductId { get; set; }
 
-        public ProductType ProductTypeId { get; set; }
+        public int ProductTypeId { get; set; }
+
+        public virtual ProductType ProductType { get; set; }
 
         public int ProductOwnerId { get; set; }
 
@@ -18,7 +20,7 @@
 
         public decimal Price { get; set; }
 
-        public IEnumerable<ProductPicture> Enumerable { get; set; }
+        public virtual IEnumerable<ProductPicture> Images { get; set; }
 
         public int Visualizations { get; set; }
 

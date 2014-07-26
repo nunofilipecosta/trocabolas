@@ -16,7 +16,7 @@ namespace TrocaBolas.Infrastructure.Database
 
         public DbSet<TrocaBolasUserProfile> Profiles { get; set; }
 
-        public DbSet<TrocaBolasProduct> Products { get; set; }
+        public DbSet<Product> Products { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {

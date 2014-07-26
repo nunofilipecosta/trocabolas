@@ -39,6 +39,6 @@
 
         public string Phone { get; set; }
 
-        public virtual ICollection<TrocaBolasProduct> InsertedProducts { get; set; }
+        public virtual ICollection<Product> InsertedProducts { get; set; }
     }
 }

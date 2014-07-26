@@ -3,7 +3,7 @@
     using System.Data.Entity.ModelConfiguration;
     using Domain.Entities;
 
-    public class TrocaBolasProductMapping : EntityTypeConfiguration<TrocaBolasProduct>
+    public class TrocaBolasProductMapping : EntityTypeConfiguration<Product>
     {
         public TrocaBolasProductMapping()
         {
