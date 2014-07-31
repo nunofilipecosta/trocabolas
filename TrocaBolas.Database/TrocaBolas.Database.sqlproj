@@ -63,6 +63,7 @@
     <Folder Include="dbo\" />
     <Folder Include="dbo\Tables\" />
     <Folder Include="dbo\Stored Procedures" />
+    <Folder Include="ReferenceData" />
   </ItemGroup>
   <ItemGroup>
     <Build Include="dbo\Tables\__MigrationHistory.sql" />
@@ -122,5 +123,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="TrocaBolas.Database_Local.publish.xml" />
+    <None Include="ReferenceData\CustomerType.Data.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <PostDeploy Include="Script.PostDeployment.sql" />
   </ItemGroup>
 </Project>
