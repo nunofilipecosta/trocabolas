@@ -4,13 +4,13 @@ namespace TrocaBolas.Infrastructure.Services
     using System;
     using Database;
 
-    public class UnitOfWork : IUnitOfWork , IDisposable
+    public class UnitOfWork : IUnitOfWork, IDisposable
     {
-        private readonly IDbContext _context;
+        private readonly TrocaBolasContext _context;
 
         //public  UsersRepository { get; set; }
 
-        public UnitOfWork(IDbContext context)
+        public UnitOfWork(TrocaBolasContext context)
         {
             this._context = context;
         }
@@ -46,11 +46,11 @@ namespace TrocaBolas.Infrastructure.Services
 
             if (disposing)
             {
-                //TODO: Managed cleanup code here, while managed refs still valid
+                // TODO: Managed cleanup code here, while managed refs still valid
                 _context.Dispose();
             }
-            //TODO: Unmanaged cleanup code here
 
+            // TODO: Unmanaged cleanup code here
             disposed = true;
         }
 

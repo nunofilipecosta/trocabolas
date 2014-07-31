@@ -3,7 +3,7 @@
     using System;
     using Domain.Entities;
 
-    public interface IAccountService
+    public interface IAccountService : IDisposable
     {
         void Register(TrocaBolasUser currentUser);
 

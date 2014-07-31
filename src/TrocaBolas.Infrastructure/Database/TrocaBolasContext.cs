@@ -1,11 +1,12 @@
 ﻿
 namespace TrocaBolas.Infrastructure.Database
 {
+    using System;
     using System.Data.Entity;
     using Domain.Entities;
     using Mappings;
 
-    public class TrocaBolasContext : DbContext, IDbContext
+    public class TrocaBolasContext : DbContext
     {
         public TrocaBolasContext()
             : base("umbracoDbDSN")

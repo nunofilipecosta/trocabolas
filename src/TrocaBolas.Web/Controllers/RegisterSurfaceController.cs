@@ -25,9 +25,9 @@ namespace TrocaBolas.Web.Controllers
             IViewModelBuilder<TrocaBolasUser, RegisterViewModel> viewModelBuilder,
             IDomainBuilder<RegisterViewModel, TrocaBolasUser> domainBuilder)
         {
-            _accountService = _accountService;
-            _domainBuilder = _domainBuilder;
-            _viewModelBuilder = _viewModelBuilder;
+            _accountService = accountService;
+            _domainBuilder = domainBuilder;
+            _viewModelBuilder = viewModelBuilder;
         }
 
         public RegisterSurfaceController()

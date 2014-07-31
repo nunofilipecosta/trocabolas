@@ -5,7 +5,7 @@
     using System.Data.Entity.Infrastructure;
     using Domain.Entities;
 
-    public interface IDbContext : IDisposable
+    public interface IDbContext
     {
         Database Db { get; }
 

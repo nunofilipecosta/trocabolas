@@ -7,9 +7,9 @@
     using Domain.Entities;
     using Services;
 
-    public class SqlUserRepository : IUserRepository
+    public class SqlUserRepository : IUserRepository, IDisposable
     {
-        private readonly IDbContext _context;
+        private readonly TrocaBolasContext _context;
         
 
         public SqlUserRepository()
@@ -30,7 +30,7 @@
             return new TrocaBolasUser(Guid.Parse(membershipUser.ProviderUserKey.ToString()), membershipUser.UserName, membershipUser.Email, trocaBolasUserProfile);
         }
 
-        ///<exception cref="T:System.InvalidOperationException">The user was not created.</exception>
+        /// <exception cref="T:System.InvalidOperationException">The user was not created.</exception>
         public TrocaBolasUser Add(TrocaBolasUser currentUser, string password)
         {
             var membershipUser = Membership.CreateUser(currentUser.Username, password, currentUser.Email);
@@ -65,6 +65,20 @@
 
 
             return new TrocaBolasUser(currentProfile.UserId, membershipUser.UserName, membershipUser.Email, currentProfile);
+        }
+
+        public void Dispose()
+        {
+            Dispose(true);
+            GC.SuppressFinalize(this);
+        }
+
+        private void Dispose(bool disposing)
+        {
+            if (this._context != null)
+            {
+                this._context.Dispose();
+            }
         }
     }
 }

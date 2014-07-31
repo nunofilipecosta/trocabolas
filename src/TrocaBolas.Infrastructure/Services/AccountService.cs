@@ -1,6 +1,7 @@
 ﻿namespace TrocaBolas.Infrastructure.Services
 {
     using System;
+    using System.Diagnostics;
     using System.Web.Security;
     using Database.Repositories;
     using Domain.Entities;
@@ -25,28 +26,40 @@
 
             return trocaBolasUser;
         }
-        
+
         public TrocaBolasUser GetById(Guid userId)
         {
             try
             {
-                return GetException();
+                throw new NotImplementedException();
             }
             catch (NotImplementedException notImplementedException)
             {
+                System.Diagnostics.EventLog.WriteEntry(string.Empty, notImplementedException.Message, EventLogEntryType.Error);
                 return new TrocaBolasUser();
             }
-        }
-
-        /// <exception cref="NotImplementedException">Thrown every time </exception>
-        private TrocaBolasUser GetException()
-        {
-            throw new NotImplementedException();
         }
 
         public bool Validate(string userName, string password)
         {
             return Membership.ValidateUser(userName, password);
+        }
+
+        public void Dispose()
+        {
+            Dispose(true);
+            GC.SuppressFinalize(this);
+        }
+
+        protected virtual void Dispose(bool disposing)
+        {
+            if (disposing)
+            {
+                if (_userRepository != null)
+                {
+                    _userRepository.Dispose();
+                }
+            }
         }
     }
 }
