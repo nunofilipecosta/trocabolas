@@ -248,8 +248,8 @@
     <Content Include="fonts\glyphicons-halflings-regular.eot" />
     <Content Include="Content\bootstrap-theme.css.map" />
     <Content Include="Content\bootstrap.css.map" />
-    <None Include="Properties\PublishProfiles\trocabolas - FTP.pubxml" />
-    <None Include="Properties\PublishProfiles\trocabolas - Web Deploy.pubxml" />
+    <None Include="Properties\PublishProfiles\trocabolas %282%29.pubxml" />
+    <None Include="Properties\PublishProfiles\trocabolas.pubxml" />
     <None Include="scripts\jquery-2.1.0.intellisense.js" />
     <Content Include="scripts\html5shiv.js" />
     <Content Include="scripts\jquery-2.1.0.js" />
