@@ -4,27 +4,25 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <Name>TrocaBolas.Database</Name>
+    <Name>TrocaBolas.SqlDatabase</Name>
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectVersion>4.1</ProjectVersion>
-    <ProjectGuid>{7afccb65-eca0-47d8-adc9-1c95c91b8829}</ProjectGuid>
-    <DSP>Microsoft.Data.Tools.Schema.Sql.SqlAzureDatabaseSchemaProvider</DSP>
+    <ProjectGuid>{48c2a864-e1df-468c-b207-8a079db903c9}</ProjectGuid>
+    <DSP>Microsoft.Data.Tools.Schema.Sql.Sql110DatabaseSchemaProvider</DSP>
     <OutputType>Database</OutputType>
     <RootPath>
     </RootPath>
-    <RootNamespace>TrocaBolas.Database</RootNamespace>
-    <AssemblyName>TrocaBolas.Database</AssemblyName>
-    <ModelCollation>1033,CI</ModelCollation>
+    <RootNamespace>TrocaBolas.SqlDatabase</RootNamespace>
+    <AssemblyName>TrocaBolas.SqlDatabase</AssemblyName>
+    <ModelCollation>1033, CI</ModelCollation>
     <DefaultFileStructure>BySchemaAndSchemaType</DefaultFileStructure>
     <DeployToDatabase>True</DeployToDatabase>
     <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
     <TargetLanguage>CS</TargetLanguage>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <SqlServerVerification>True</SqlServerVerification>
+    <SqlServerVerification>False</SqlServerVerification>
     <IncludeCompositeObjects>True</IncludeCompositeObjects>
     <TargetDatabaseSet>True</TargetDatabaseSet>
-    <DefaultCollation>SQL_Latin1_General_CP1_CI_AS</DefaultCollation>
-    <DefaultFilegroup>PRIMARY</DefaultFilegroup>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <OutputPath>bin\Release\</OutputPath>
@@ -48,7 +46,6 @@
     <DefineTrace>true</DefineTrace>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <RunSqlCodeAnalysis>True</RunSqlCodeAnalysis>
   </PropertyGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">11.0</VisualStudioVersion>
@@ -60,14 +57,14 @@
   <Import Condition="'$(SQLDBExtensionsRefPath)' == ''" Project="$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v$(VisualStudioVersion)\SSDT\Microsoft.Data.Tools.Schema.SqlTasks.targets" />
   <ItemGroup>
     <Folder Include="Properties" />
-    <Folder Include="dbo\" />
-    <Folder Include="dbo\Tables\" />
+    <Folder Include="dbo" />
     <Folder Include="dbo\Stored Procedures" />
+    <Folder Include="dbo\Tables" />
   </ItemGroup>
   <ItemGroup>
+    <Build Include="dbo\Stored Procedures\CustomerRetrieve.sql" />
     <Build Include="dbo\Tables\__MigrationHistory.sql" />
-    <Build Include="dbo\Tables\Products.sql" />
-    <Build Include="dbo\Tables\ProductTypes.sql" />
+    <Build Include="dbo\Tables\Applications.sql" />
     <Build Include="dbo\Tables\cmsContent.sql" />
     <Build Include="dbo\Tables\cmsContentType.sql" />
     <Build Include="dbo\Tables\cmsContentType2ContentType.sql" />
@@ -96,31 +93,31 @@
     <Build Include="dbo\Tables\cmsTask.sql" />
     <Build Include="dbo\Tables\cmsTaskType.sql" />
     <Build Include="dbo\Tables\cmsTemplate.sql" />
+    <Build Include="dbo\Tables\Customer.sql" />
+    <Build Include="dbo\Tables\CustomerType.sql" />
+    <Build Include="dbo\Tables\Memberships.sql" />
+    <Build Include="dbo\Tables\Products.sql" />
+    <Build Include="dbo\Tables\ProductTypes.sql" />
+    <Build Include="dbo\Tables\Profiles.sql" />
+    <Build Include="dbo\Tables\Roles.sql" />
+    <Build Include="dbo\Tables\TrocaBolasUserProfiles.sql" />
     <Build Include="dbo\Tables\umbracoDomains.sql" />
     <Build Include="dbo\Tables\umbracoLanguage.sql" />
     <Build Include="dbo\Tables\umbracoLog.sql" />
     <Build Include="dbo\Tables\umbracoNode.sql" />
-    <Build Include="dbo\Tables\TrocaBolasUserProfiles.sql" />
     <Build Include="dbo\Tables\umbracoRelation.sql" />
     <Build Include="dbo\Tables\umbracoRelationType.sql" />
     <Build Include="dbo\Tables\umbracoServer.sql" />
-    <Build Include="dbo\Tables\Applications.sql" />
-    <Build Include="dbo\Tables\Memberships.sql" />
     <Build Include="dbo\Tables\umbracoUser.sql" />
-    <Build Include="dbo\Tables\Profiles.sql" />
-    <Build Include="dbo\Tables\Roles.sql" />
     <Build Include="dbo\Tables\umbracoUser2app.sql" />
     <Build Include="dbo\Tables\umbracoUser2NodeNotify.sql" />
-    <Build Include="dbo\Tables\Users.sql" />
     <Build Include="dbo\Tables\umbracoUser2NodePermission.sql" />
     <Build Include="dbo\Tables\umbracoUserLogins.sql" />
-    <Build Include="dbo\Tables\UsersInRoles.sql" />
     <Build Include="dbo\Tables\umbracoUserType.sql" />
-    <Build Include="dbo\Tables\CustomerType.sql" />
-    <Build Include="dbo\Tables\Customer.sql" />
-    <Build Include="dbo\Stored Procedures\CustomerRetrieve.sql" />
+    <Build Include="dbo\Tables\Users.sql" />
+    <Build Include="dbo\Tables\UsersInRoles.sql" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="TrocaBolas.Database_Local.publish.xml" />
+    <None Include="TrocaBolas.SqlDatabase.publish.xml" />
   </ItemGroup>
 </Project>
