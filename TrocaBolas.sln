@@ -24,7 +24,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{7D0CEE
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TrocaBolas.Web", "src\TrocaBolas.Web\TrocaBolas.Web.csproj", "{807F4C0F-9C0A-4382-96F5-407157F6F3B0}"
 EndProject
-Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "TrocaBolas.SqlDatabase", "src\TrocaBolas.SqlDatabase\TrocaBolas.SqlDatabase.sqlproj", "{48C2A864-E1DF-468C-B207-8A079DB903C9}"
+Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "TrocaBolas.SqlDatabase", "TrocaBolas.SqlDatabase\TrocaBolas.SqlDatabase.sqlproj", "{48C2A864-E1DF-468C-B207-8A079DB903C9}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
