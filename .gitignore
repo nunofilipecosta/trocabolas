@@ -152,4 +152,4 @@ $RECYCLE.BIN/
 /packages
 /src/TrocaBolas.Web/App_Data/TEMP
 /src/TrocaBolas.Web/App_Data/Logs
-/src/TrocaBolas.Web/App_Data/umbraco.config
+/src/TrocaBolas.Web/App_Data/preview
