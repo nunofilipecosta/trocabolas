@@ -10,6 +10,7 @@ using Umbraco.Web.Mvc;
 
 namespace TrocaBolas.Web.Controllers
 {
+    using System.ComponentModel;
     using Infrastructure.Services;
 
     public class RegisterSurfaceController : SurfaceController
@@ -113,9 +114,9 @@ namespace TrocaBolas.Web.Controllers
         {
             var viewModel = new EditViewModel();
 
-            
+            throw new InvalidAsynchronousStateException();
 
-            return PartialView("_EditForm", viewModel);
+            //return PartialView("_EditForm", viewModel);
         }
 
         [HttpPost]

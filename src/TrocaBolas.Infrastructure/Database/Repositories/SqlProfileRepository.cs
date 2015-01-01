@@ -31,6 +31,7 @@
         }
 
         /// <exception cref="T:System.InvalidOperationException">The user was not created.</exception>
+        /// <exception cref="MembershipCreateUserException">. </exception>
         public TrocaBolasUser Add(TrocaBolasUser currentUser, string password)
         {
             var membershipUser = Membership.CreateUser(currentUser.Username, password, currentUser.Email);
